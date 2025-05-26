@@ -37,6 +37,7 @@ I'm passionate about learning, problem solving, and building things that help ot
 
 📫 [LinkedIn](https://www.linkedin.com/in/vahab-afsharian-veev1337/)  
 💻 [GitHub](https://github.com/viboverse)
+
 💻 [GitLab](https://gitlab.labranet.jamk.fi/AG2198)
 
 ---
