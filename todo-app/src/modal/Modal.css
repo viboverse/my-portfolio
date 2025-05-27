@@ -1,0 +1,68 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-error {
+  border: none;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  background: #fff0f0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  color: #b00020;
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+  animation: modal-pop 0.2s ease;
+  will-change: opacity;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.modal-title {
+  margin-top: 0;
+  color: #b00020;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-message {
+  margin: 1rem 0 2rem 0;
+  font-size: 1.1rem;
+}
+
+.modal-btn {
+  background: #b00020;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-btn:hover {
+  background: #d32f2f;
+}
+
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}

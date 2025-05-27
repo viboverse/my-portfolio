@@ -1,9 +1,11 @@
 import { useContext, useRef } from "react";
 import { isEmail, isNotEmpty, hasMinLength } from "../util/validation";
-import { AuthContext } from "../context/auth-context";
+import { AuthContext } from "../context/AuthContext";
+import { ErrorContext } from "../context/ErrorContext";
 
-function Authentication() {
+function Auth() {
   const { login } = useContext(AuthContext);
+  const { setError } = useContext(ErrorContext);
   const email = useRef();
   const password = useRef();
 
@@ -14,17 +16,18 @@ function Authentication() {
     const enteredPassword = password.current.value;
 
     if (!isNotEmpty(enteredEmail)) {
-      throw new Error("Email can not be empty!");
+      setError("Email can not be empty!");
+      return;
     }
 
     if (!isEmail(enteredEmail)) {
-      throw new Error("Email is not valid!");
+      setError("Email is not valid!");
+      return;
     }
 
     if (!isNotEmpty(enteredPassword) || !hasMinLength(enteredPassword, 6)) {
-      throw new Error(
-        "You must provide a password with at least six characters."
-      );
+      setError("You must provide a password with at least six characters.");
+      return;
     }
 
     login();
@@ -34,11 +37,11 @@ function Authentication() {
     <form onSubmit={handleSubmit}>
       <label htmlFor="email">
         Email:
-        <input type="text" id="email" ref={email} />
+        <input type="text" id="email" ref={email} required />
       </label>
       <label htmlFor="password">
         Password:
-        <input type="text" id="password" ref={password} />
+        <input type="text" id="password" ref={password} required />
       </label>
 
       <div>
@@ -49,4 +52,4 @@ function Authentication() {
   );
 }
 
-export default Authentication;
+export default Auth;

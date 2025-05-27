@@ -1,26 +1,34 @@
 import { useContext } from "react";
-import NewProject from "./NewProject";
-import ProjectsSideBar from "./ProjectsSideBar";
-import { ProjectContext } from "../context/project-context";
+import { ProjectContext } from "../context/ProjectContext";
 import ProjectDetails from "./ProjectDetails";
+import ProjectForm from "./ProjectForm";
+import ProjectsSidebar from "./ProjectsSidebar";
+import Modal from "../modal/Modal";
 
 function DashBoard() {
-  const { selectedProject } = useContext(ProjectContext);
+  const { selectedProject, creatingProject, setCreatingProject } =
+    useContext(ProjectContext);
 
   return (
     <>
-      <ProjectsSideBar />
+      <Modal />
+      <ProjectsSidebar onShowForm={() => setCreatingProject(true)} />
       <div className="dashboard">
-        {!selectedProject ? (
-          <NewProject />
-        ) : (
+        {creatingProject ? (
+          <ProjectForm onSuccess={() => setCreatingProject(false)} />
+        ) : selectedProject ? (
           <ProjectDetails
             key={selectedProject.id}
+            id={selectedProject.id}
             title={selectedProject.title}
-            description={selectedProject.description}
             date={selectedProject.date}
+            description={selectedProject.description}
             priority={selectedProject.priority}
           />
+        ) : (
+          <button onClick={() => setCreatingProject(true)}>
+            Create A Project
+          </button>
         )}
       </div>
     </>

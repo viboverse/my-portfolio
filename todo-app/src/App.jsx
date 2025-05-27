@@ -1,22 +1,21 @@
-import Authentication from "./components/Authentication";
+import Authentication from "./components/Auth";
 import "./App.css";
 import { useContext } from "react";
-import { AuthContext } from "./context/auth-context";
+import { AuthContext } from "./context/AuthContext";
 import DashBoard from "./components/Dashboard";
-import { ProjectContext } from "./context/project-context";
+import Auth from "./components/Auth";
+import Modal from "./modal/Modal";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
-
-  const { projects } = useContext(ProjectContext);
-  console.log(projects);
 
   return (
     <div className="main-content">
       <header>
         <h1>My Todo App</h1>
       </header>
-      <main>{!isLoggedIn ? <Authentication /> : <DashBoard />}</main>
+      <Modal />
+      <main>{!isLoggedIn ? <Auth /> : <DashBoard />}</main>
     </div>
   );
 }
