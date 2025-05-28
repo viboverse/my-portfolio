@@ -277,22 +277,6 @@ body.dark .header-welcome {
   gap: 1.2em;
 }
 
-.theme-toggle-btn {
-  background: linear-gradient(90deg, #6c63ff 60%, #5146d8 100%);
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 24px;
-  padding: 0.6em 1.5em;
-  font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.1);
-  transition: background 0.2s;
-  cursor: pointer;
-}
-.theme-toggle-btn:hover {
-  background: linear-gradient(90deg, #5146d8 60%, #6c63ff 100%);
-}
-
 /* OVERRIDE: Make dashboard/main content area a single color */
 .dashboard,
 .main-content {
