@@ -13,20 +13,6 @@ body {
   padding: 20px;
 }
 
-/* Header */
-header {
-  background: #0063cc;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 1.8rem;
-}
-
 /* Auth Page Styles */
 .auth-page-center {
   min-height: 100vh;
@@ -125,61 +111,6 @@ header h1 {
   background: linear-gradient(90deg, #5146d8 60%, #6c63ff 100%);
 }
 
-/* Buttons */
-button {
-  background: #050a30;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin: 5px;
-}
-
-button:hover {
-  background: #0056b3;
-}
-
-button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-}
-
-/* Forms */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-label {
-  font-weight: bold;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-/* Section Titles */
-h2,
-h3 {
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
 /* Sidebar Container */
 .sidebar {
   border-radius: 15px;
@@ -274,14 +205,6 @@ h3 {
   text-overflow: ellipsis;
 }
 
-/* Main Content */
-.main-content {
-  margin-left: 250px; /* Same width as the sidebar */
-  padding: 20px;
-  background: #050a30 !important;
-  min-height: 100vh;
-}
-
 .new-project-btn {
   background: #6c63ff;
   color: #fff;
@@ -372,58 +295,11 @@ body.dark .header-welcome {
 
 /* OVERRIDE: Make dashboard/main content area a single color */
 .dashboard,
-.main-content,
-.dashboard-empty,
-.no-card-bg {
+.main-content {
   background: #050a30 !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   color: #fff;
-}
-
-/* Dashboard Empty State */
-.dashboard-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  background: #050a30 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  margin: 3rem auto 0 auto;
-  padding: 3rem 2rem 2.5rem 2rem;
-  max-width: 600px;
-}
-
-.create-project-btn {
-  background: linear-gradient(90deg, #6c63ff 60%, #5146d8 100%);
-  color: #fff;
-  font-weight: 700;
-  border: none;
-  border-radius: 32px;
-  padding: 1.1em 2.5em;
-  font-size: 1.2rem;
-  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.1);
-  transition: background 0.2s, box-shadow 0.2s;
-  margin-bottom: 1.2em;
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
-  cursor: pointer;
-}
-.create-project-btn:hover {
-  background: linear-gradient(90deg, #5146d8 60%, #6c63ff 100%);
-  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.18);
-}
-.create-project-icon {
-  font-size: 1.4em;
-}
-.create-project-helper {
-  color: #6c63ff;
-  font-size: 1.08em;
-  text-align: center;
-  margin-top: 0.2em;
 }
 
 /* Modern Project Form Styles */
@@ -651,4 +527,64 @@ body.dark .task-item {
 .task-remove-btn:hover {
   background: #b71c1c;
   box-shadow: 0 4px 16px rgba(229, 57, 53, 0.18);
+}
+
+/* Restore essential global styles for forms, inputs, and buttons */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  background: #050a30;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+h2,
+h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.main-content {
+  margin-left: 250px; /* Same width as the sidebar */
+  padding: 20px;
+  background: #050a30 !important;
+  min-height: 100vh;
 }
