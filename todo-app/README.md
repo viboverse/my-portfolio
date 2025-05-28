@@ -15,7 +15,7 @@ A modern project and task management app built with React and Vite. Organize you
 
 ## Screenshots
 
-![Dashboard Screenshot](public/vite.svg)
+![Dashboard Screenshot](public/screenshot.png)
 
 ## Getting Started
 
@@ -65,7 +65,3 @@ src/
 - TypeScript migration
 - More advanced state management
 - Mobile-first enhancements
-
-## License
-
-MIT
