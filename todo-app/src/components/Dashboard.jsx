@@ -5,6 +5,7 @@ import ProjectForm from './ProjectForm';
 import ProjectsSidebar from './ProjectsSidebar';
 import Modal from '../modal/Modal';
 import Header from './Header';
+import { IoAddCircle } from 'react-icons/io5';
 
 function DashBoard() {
   const { selectedProject, creatingProject, setCreatingProject } = useContext(ProjectContext);
@@ -28,7 +29,9 @@ function DashBoard() {
           />
         ) : (
           <button className="new-project-btn" onClick={() => setCreatingProject(true)}>
-            Create A Project
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5em' }}>
+              <IoAddCircle size={22} /> Create A Project
+            </span>
           </button>
         )}
       </div>

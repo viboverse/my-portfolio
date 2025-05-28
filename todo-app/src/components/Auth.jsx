@@ -42,7 +42,7 @@ function Auth() {
         <p className="auth-sub">Organize your projects and tasks with ease.</p>
       </div>
       <form className="auth-form" onSubmit={handleSubmit}>
-        <Input label="Email:" type="email" id="email" ref={email} required />
+        <Input label="Email:" type="text" id="email" ref={email} />
 
         <Input label="Password:" type="password" id="password" ref={password} required />
 

@@ -2,6 +2,8 @@ import { useContext, useState } from 'react';
 import Input from './Input';
 import { ProjectContext } from '../context/ProjectContext';
 import { AuthContext } from '../context/AuthContext';
+import { BiLogOut } from 'react-icons/bi';
+import { IoMdCreate } from 'react-icons/io';
 
 export default function ProjectsSidebar({ onShowForm }) {
   const [search, setSearch] = useState('');
@@ -24,7 +26,7 @@ export default function ProjectsSidebar({ onShowForm }) {
       <h2>YOUR PROJECTS</h2>
       <Input type="search" label="Search" placeholder="Find the projects..." onChange={(e) => setSearch(e.target.value)} value={search} />
       <button className="new-project-btn" onClick={handleShowProjectForm}>
-        Create New Project
+        <IoMdCreate size={18} /> Create New Project
       </button>
       <span className="new-project-helper">Start a new project to organize your tasks.</span>
       <ul className="sidebar-projects-list">
@@ -40,6 +42,7 @@ export default function ProjectsSidebar({ onShowForm }) {
 
       <div className="sidebar-logout">
         <button className="logout-btn" onClick={logout}>
+          <BiLogOut size={20} color="#fff" style={{ marginRight: '0.3em' }} />
           Logout
         </button>
       </div>
