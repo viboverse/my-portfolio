@@ -46,22 +46,30 @@ function ProjectForm({ onSuccess }) {
   const [formState, formAction] = useActionState(projectAction, initialState);
 
   return (
-    <form action={formAction}>
-      <Input label="Project Name" name="title" defaultValue="Learning React" />
-      <Input label="Description" TextContainer="textarea" name="description" defaultValue="In here we gona explain what the project is about" />
-      <Input label="Due Date" type="date" name="date" defaultValue="2025-05-27" />
-
-      <label htmlFor="priority">Priority</label>
-      <select id="priority" name="priority">
-        <option value="Normal">Normal</option>
-        <option value="High">High</option>
-        <option value="Urgent">Urgent</option>
-      </select>
-
-      <button type="submit">Save</button>
-      <button type="reset">Reset</button>
+    <form action={formAction} className="project-form-modern">
+      <h2 className="project-form-title">Create New Project</h2>
+      <div className="project-form-fields">
+        <Input label="Project Name" name="title" placeholder="e.g. Learning React" />
+        <Input label="Description" TextContainer="textarea" name="description" placeholder="What is this project about?" />
+        <Input label="Due Date" type="date" name="date" min="2025-05-28" />
+        <div className="project-form-group">
+          <label htmlFor="priority">Priority</label>
+          <select id="priority" name="priority">
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+        </div>
+      </div>
+      <div className="project-form-actions">
+        <button type="submit">Save</button>
+        <button type="reset">Reset</button>
+      </div>
     </form>
   );
 }
 
 export default ProjectForm;
+
+/* Add styles for modern form */
+/* Place this in your index.css or App.css for global effect */

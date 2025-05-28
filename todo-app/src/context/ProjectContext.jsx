@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext } from 'react';
 
 export const ProjectContext = createContext({
   projects: [],
@@ -7,8 +7,9 @@ export const ProjectContext = createContext({
   setCreatingProject: () => {},
   setSelectedProject: () => {},
   addProject: () => {},
+  onDeleteProject: () => {},
   addTask: () => {},
-  onDelete: () => {},
+  onDeleteTask: () => {},
 });
 
 export default function ProjectProvider({ children }) {
@@ -22,17 +23,19 @@ export default function ProjectProvider({ children }) {
 
   function addTask(projectId, task) {
     setProjects((prevProjects) =>
-      prevProjects.map((project) =>
-        project.id === projectId
-          ? { ...project, tasks: [...project.tasks, task] }
-          : project
-      )
+      prevProjects.map((project) => (project.id === projectId ? { ...project, tasks: [...project.tasks, task] } : project))
     );
   }
 
-  function onDelete(id) {
+  function onDeleteProject(id) {
     setProjects((prevProjects) => prevProjects.filter((p) => p.id !== id));
     setSelectedProject(null);
+  }
+
+  function onDeleteTask(projectId, taskId) {
+    setProjects((prevProjects) =>
+      prevProjects.map((project) => (project.id === projectId ? { ...project, tasks: project.tasks.filter((task) => task.id !== taskId) } : project))
+    );
   }
 
   return (
@@ -45,7 +48,8 @@ export default function ProjectProvider({ children }) {
         addProject,
         setSelectedProject,
         addTask,
-        onDelete,
+        onDeleteProject,
+        onDeleteTask,
       }}
     >
       {children}

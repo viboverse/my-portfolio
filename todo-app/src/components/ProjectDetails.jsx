@@ -3,11 +3,12 @@ import Input from './Input';
 import { ProjectContext } from '../context/ProjectContext';
 import { ErrorContext } from '../context/ErrorContext';
 import Modal from '../modal/Modal';
+import Task from './Task';
 
 const ProjectDetails = ({ id, title, description, date, priority }) => {
   const [taskInput, setTaskInput] = useState('');
   const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const { addTask, projects, onDelete, setSelectedProject } = useContext(ProjectContext);
+  const { addTask, projects, onDeleteProject, setSelectedProject, onDeleteTask } = useContext(ProjectContext);
   const { setError } = useContext(ErrorContext);
 
   function handleTask(e) {
@@ -33,7 +34,7 @@ const ProjectDetails = ({ id, title, description, date, priority }) => {
 
   // Confirm deletion
   function handleConfirmDelete() {
-    onDelete(id);
+    onDeleteProject(id);
     setSelectedProject(null);
     setShowConfirmModal(false);
   }
@@ -46,7 +47,7 @@ const ProjectDetails = ({ id, title, description, date, priority }) => {
   const currProject = projects.find((project) => project.id === id);
 
   return (
-    <div className="dashboard">
+    <div className="project-details-card">
       {showConfirmModal && (
         <Modal
           errorTitle="Are you sure?"
@@ -55,23 +56,31 @@ const ProjectDetails = ({ id, title, description, date, priority }) => {
           onCancel={handleCancelDelete}
         />
       )}
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <p>Due Date: {date}</p>
-      <p>Priority: {priority}</p>
-
-      <button onClick={handleDeleteProject}>Delete</button>
-
-      <form>
+      <div className="project-details-header">
+        <span className="project-details-title">{title}</span>
+        <button className="project-details-delete-btn" onClick={handleDeleteProject}>
+          Delete
+        </button>
+      </div>
+      <div className="project-details-meta">
+        <span>Due: {date}</span>
+        <span>Priority: {priority}</span>
+      </div>
+      <div className="project-details-desc" style={{ textAlign: 'left' }}>
+        Description: {description}
+      </div>
+      <form onSubmit={handleTask}>
         <Input label="You can add tasks here:" value={taskInput} onChange={(event) => setTaskInput(event.target.value)} />
-        <button onClick={handleTask}>Save</button>
+        <button type="submit">Save</button>
       </form>
-
-      <ul>
-        {currProject?.tasks.map((task) => (
-          <li key={task.id}>{task.title}</li>
-        ))}
-      </ul>
+      <div className="project-details-tasks">
+        <h3>Tasks</h3>
+        <ul className="project-details-tasks-list">
+          {currProject?.tasks.map((task) => (
+            <Task key={task.id} task={task.title} onRemove={() => onDeleteTask(id, task.id)} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import ProjectDetails from './ProjectDetails';
 import ProjectForm from './ProjectForm';
 import ProjectsSidebar from './ProjectsSidebar';
 import Modal from '../modal/Modal';
+import Header from './Header';
 
 function DashBoard() {
   const { selectedProject, creatingProject, setCreatingProject } = useContext(ProjectContext);
@@ -11,6 +12,7 @@ function DashBoard() {
   return (
     <>
       <Modal />
+      <Header />
       <ProjectsSidebar onShowForm={() => setCreatingProject(true)} />
       <div className="dashboard">
         {creatingProject ? (
@@ -25,7 +27,9 @@ function DashBoard() {
             priority={selectedProject.priority}
           />
         ) : (
-          <button onClick={() => setCreatingProject(true)}>Create A Project</button>
+          <button className="new-project-btn" onClick={() => setCreatingProject(true)}>
+            Create A Project
+          </button>
         )}
       </div>
     </>

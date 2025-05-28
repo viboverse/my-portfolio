@@ -5,7 +5,7 @@ import { ErrorContext } from '../context/ErrorContext';
 import Input from './Input';
 
 function Auth() {
-  const { login, setUsername } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   const { setError } = useContext(ErrorContext);
 
   const email = useRef();
@@ -32,22 +32,26 @@ function Auth() {
       return;
     }
 
-    setUsername(enteredEmail);
-
-    login();
+    login(enteredEmail);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Input label="Email:" type="email" id="email" ref={email} required />
-
-      <Input label="Password:" type="password" id="password" ref={password} required />
-
-      <div>
-        <button type="reset">Reset</button>
-        <button>Login</button>
+    <div className="auth-page-center">
+      <div className="auth-welcome">
+        <h1>Welcome to My Project Manager App</h1>
+        <p className="auth-sub">Organize your projects and tasks with ease.</p>
       </div>
-    </form>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <Input label="Email:" type="email" id="email" ref={email} required />
+
+        <Input label="Password:" type="password" id="password" ref={password} required />
+
+        <div className="auth-btns">
+          <button>Login</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
   );
 }
 
