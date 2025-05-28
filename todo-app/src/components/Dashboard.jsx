@@ -3,7 +3,6 @@ import { ProjectContext } from '../context/ProjectContext';
 import ProjectDetails from './ProjectDetails';
 import ProjectForm from './ProjectForm';
 import ProjectsSidebar from './ProjectsSidebar';
-import Modal from '../modal/Modal';
 import Header from './Header';
 import { IoAddCircle } from 'react-icons/io5';
 
@@ -12,7 +11,6 @@ function DashBoard() {
 
   return (
     <>
-      <Modal />
       <Header />
       <ProjectsSidebar onShowForm={() => setCreatingProject(true)} />
       <div className="dashboard">

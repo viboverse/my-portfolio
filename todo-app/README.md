@@ -1,12 +1,71 @@
-# React + Vite
+# My Project Manager (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern project and task management app built with React and Vite. Organize your projects, add tasks, and manage your productivity with a clean, responsive UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Authentication**: Simple login system (local state)
+- **Project Management**: Create, view, and delete projects
+- **Task Management**: Add and remove tasks for each project
+- **Sidebar Navigation**: Quickly switch between projects
+- **Responsive UI**: Modern design with custom CSS
+- **SVG & Icon Integration**: Uses SVG illustrations and [react-icons](https://react-icons.github.io/react-icons/)
+- **Error Handling**: Modal-based error feedback
+- **React Context**: State management for auth, projects, and errors
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Dashboard Screenshot](public/vite.svg)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or newer recommended)
+- npm
+
+### Installation
+
+```sh
+npm install
+```
+
+### Running the App
+
+```sh
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Building for Production
+
+```sh
+npm run build
+```
+
+## Folder Structure
+
+```
+src/
+  components/      # React components
+  context/         # React context providers
+  modal/           # Modal component and styles
+  util/            # Utility functions
+  assets/          # Images and SVGs
+  index.css        # Global styles
+  App.jsx          # Main app component
+```
+
+## Future Improvements
+
+- Backend integration (Firebase, REST API, etc.)
+- Persistent authentication
+- Unit and integration tests
+- TypeScript migration
+- More advanced state management
+- Mobile-first enhancements
+
+## License
+
+MIT

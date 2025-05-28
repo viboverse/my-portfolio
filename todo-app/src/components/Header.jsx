@@ -12,7 +12,7 @@ export default function Header() {
         <span className="header-welcome">Welcome{username ? `, ${username}` : ''}!</span>
       </div>
       <div className="header-right">
-        <img src={welcomeSvg} alt="Welcome Illustration" />
+        <img src={welcomeSvg} />
       </div>
     </header>
   );
