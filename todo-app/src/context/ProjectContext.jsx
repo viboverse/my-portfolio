@@ -5,9 +5,10 @@ export const ProjectContext = createContext({
   selectedProject: null,
   creatingProject: false,
   setCreatingProject: () => {},
-  addProject: () => {},
   setSelectedProject: () => {},
+  addProject: () => {},
   addTask: () => {},
+  onDelete: () => {},
 });
 
 export default function ProjectProvider({ children }) {
@@ -29,6 +30,11 @@ export default function ProjectProvider({ children }) {
     );
   }
 
+  function onDelete(id) {
+    setProjects((prevProjects) => prevProjects.filter((p) => p.id !== id));
+    setSelectedProject(null);
+  }
+
   return (
     <ProjectContext.Provider
       value={{
@@ -39,6 +45,7 @@ export default function ProjectProvider({ children }) {
         addProject,
         setSelectedProject,
         addTask,
+        onDelete,
       }}
     >
       {children}

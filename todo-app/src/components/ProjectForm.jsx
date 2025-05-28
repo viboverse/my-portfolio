@@ -1,21 +1,21 @@
-import { useActionState, useContext } from "react";
-import Input from "./Input";
-import { ProjectContext } from "../context/ProjectContext";
-import { ErrorContext } from "../context/ErrorContext";
-import { isNotEmpty } from "../util/validation";
+import { useActionState, useContext } from 'react';
+import Input from './Input';
+import { ProjectContext } from '../context/ProjectContext';
+import { ErrorContext } from '../context/ErrorContext';
+import { isNotEmpty } from '../util/validation';
 
 function ProjectForm({ onSuccess }) {
   const { addProject } = useContext(ProjectContext);
   const { setError } = useContext(ErrorContext);
 
   function projectAction(prevState, formData) {
-    const title = formData.get("title");
-    const description = formData.get("description");
-    const date = formData.get("date");
-    const priority = formData.get("priority");
+    const title = formData.get('title');
+    const description = formData.get('description');
+    const date = formData.get('date');
+    const priority = formData.get('priority');
 
     if (!isNotEmpty(title)) {
-      setError("Title cannot be empty!");
+      setError('Title cannot be empty!');
       return;
     }
 
@@ -37,29 +37,19 @@ function ProjectForm({ onSuccess }) {
   }
 
   const initialState = {
-    title: "",
-    description: "",
-    date: "",
-    priority: "",
+    title: '',
+    description: '',
+    date: '',
+    priority: '',
   };
 
   const [formState, formAction] = useActionState(projectAction, initialState);
 
   return (
     <form action={formAction}>
-      <Input title="Project Name" name="title" defaultValue="Learning React" />
-      <Input
-        title="Description"
-        TextContainer="textarea"
-        name="description"
-        defaultValue="In here we gona explain what the project is about"
-      />
-      <Input
-        title="Due Date"
-        type="date"
-        name="date"
-        defaultValue="2025-05-27"
-      />
+      <Input label="Project Name" name="title" defaultValue="Learning React" />
+      <Input label="Description" TextContainer="textarea" name="description" defaultValue="In here we gona explain what the project is about" />
+      <Input label="Due Date" type="date" name="date" defaultValue="2025-05-27" />
 
       <label htmlFor="priority">Priority</label>
       <select id="priority" name="priority">

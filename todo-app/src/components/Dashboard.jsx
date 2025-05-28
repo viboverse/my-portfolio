@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { ProjectContext } from "../context/ProjectContext";
-import ProjectDetails from "./ProjectDetails";
-import ProjectForm from "./ProjectForm";
-import ProjectsSidebar from "./ProjectsSidebar";
-import Modal from "../modal/Modal";
+import { useContext } from 'react';
+import { ProjectContext } from '../context/ProjectContext';
+import ProjectDetails from './ProjectDetails';
+import ProjectForm from './ProjectForm';
+import ProjectsSidebar from './ProjectsSidebar';
+import Modal from '../modal/Modal';
 
 function DashBoard() {
-  const { selectedProject, creatingProject, setCreatingProject } =
-    useContext(ProjectContext);
+  const { selectedProject, creatingProject, setCreatingProject } = useContext(ProjectContext);
 
   return (
     <>
@@ -26,9 +25,7 @@ function DashBoard() {
             priority={selectedProject.priority}
           />
         ) : (
-          <button onClick={() => setCreatingProject(true)}>
-            Create A Project
-          </button>
+          <button onClick={() => setCreatingProject(true)}>Create A Project</button>
         )}
       </div>
     </>

@@ -1,9 +1,9 @@
-const Input = ({ title, type = "text", TextContainer = "input", ...props }) => {
+const Input = ({ label, type = 'text', TextContainer = 'input', ...props }) => {
   const Container = TextContainer;
 
   return (
     <>
-      <label>{title}</label>
+      <label>{label}</label>
       <Container {...props} type={type}></Container>
     </>
   );

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
 export const ErrorContext = createContext({
   error: null,
@@ -13,9 +13,5 @@ export default function ErrorProvider({ children }) {
     setError(null);
   }
 
-  return (
-    <ErrorContext.Provider value={{ error, setError, clearError }}>
-      {children}
-    </ErrorContext.Provider>
-  );
+  return <ErrorContext.Provider value={{ error, setError, clearError }}>{children}</ErrorContext.Provider>;
 }
