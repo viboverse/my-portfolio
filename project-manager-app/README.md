@@ -2,6 +2,8 @@
 
 A modern project and task management app built with React and Vite. Organize your projects, add tasks, and manage your productivity with a clean, responsive UI.
 
+[Live Demo](https://project-manager-app-nine.vercel.app/)
+
 ## Features
 
 - **Authentication**: Simple login system (local state)
