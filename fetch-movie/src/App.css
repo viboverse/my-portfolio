@@ -1,42 +1,174 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* General Body Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", "Inter", "Segoe UI", Arial, sans-serif;
+  background-color: #f0f7f4; /* Soft Mint Cream */
+  color: #2f4f4f; /* Dark Slate Gray */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: #ffffff; /* Pure White */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+.header img {
+  position: absolute;
+  left: 2rem;
+  height: 120px;
+  width: auto;
+}
+
+.header h1 {
+  margin: 0;
+  color: #2f4f4f; /* Dark Slate Gray */
+  font-size: 2rem;
+  font-weight: 600;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Main Layout Styles */
+.layout {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 181px);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.left-panel {
+  width: 40%;
+  max-width: 480px;
+  background: #eaf6f6; /* Soft Cyan */
+  border-right: 1px solid #d1e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.right-panel {
+  flex: 1;
+  padding: 2rem;
+  background: #f0f7f4; /* Soft Mint Cream */
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* List Item Styles (for MovieList) */
+li {
+  background: #ffffff; /* Pure White */
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  list-style: none;
+}
+
+li h2 {
+  margin-top: 0;
+  color: #2f4f4f;
+}
+
+li p {
+  color: #778899; /* Cool Gray */
+}
+
+/* Section Styles */
+section {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 2rem;
+}
+
+section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #778899;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #2f4f4f;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #48a9a6; /* Soothing Teal */
+  box-shadow: 0 0 0 3px rgba(72, 169, 166, 0.2);
+}
+
+/* Global Button Styles */
+button {
+  background-color: #ff6f61; /* Vibrant Coral */
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #e66054; /* Darker Coral */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: #b0c4de; /* Light Steel Blue */
+  color: #f0f7f4;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: #ff6f61; /* Vibrant Coral for errors */
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .left-panel {
+    width: 100%;
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
