@@ -81,7 +81,7 @@ function App() {
     setIsLoading(false);
   }, []);
 
-  let content = <p>No Movies Found.</p>;
+  let content = <li>No Movies Found.</li>;
 
   if (movies.length > 0) {
     content = <MovieList movies={movies} />;
@@ -101,12 +101,12 @@ function App() {
       <div className="layout">
         <div className="left-panel">
           <StarWarsMovies onFetch={handleFetchStarWarsMovies} />
+          <UserMovies onFetch={handleFetchFavoriteMovies} />
           <AddMovie
             onAddMovie={handleAddMovie}
             isLoading={isLoading}
             error={error}
           />
-          <UserMovies onFetch={handleFetchFavoriteMovies} />
         </div>
 
         <div className="right-panel">{content}</div>
