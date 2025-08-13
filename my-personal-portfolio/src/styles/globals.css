@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-main-background: #000;
+  --color-header-background: #1f2937;
+  --color-text-primary: #e5e7eb;
+
+  --color-black-50: #f6f6f6;
+  --color-black-100: #e7e7e7;
+  --color-black-200: #d1d1d1;
+  --color-black-300: #b0b0b0;
+  --color-black-400: #888888;
+  --color-black-500: #6d6d6d;
+  --color-black-600: #5d5d5d;
+  --color-black-700: #4f4f4f;
+  --color-black-800: #454545;
+  --color-black-900: #3d3d3d;
+  --color-black-950: #000000;
+
+  --color-jaguar-50: #f4eeff;
+  --color-jaguar-100: #e8dcff;
+  --color-jaguar-200: #c8b2ff;
+  --color-jaguar-300: #936dff;
+  --color-jaguar-400: #5920ff;
+  --color-jaguar-500: #5000ff;
+  --color-jaguar-600: #5300df;
+  --color-jaguar-700: #4500b4;
+  --color-jaguar-800: #370095;
+  --color-jaguar-900: #2d007a;
+  --color-jaguar-950: #04000a;
+
+  --color-dark-fern-50: #ebffe5;
+  --color-dark-fern-100: #d2ffc6;
+  --color-dark-fern-200: #a6ff93;
+  --color-dark-fern-300: #6dff55;
+  --color-dark-fern-400: #3df823;
+  --color-dark-fern-500: #1bdf03;
+  --color-dark-fern-600: #0fb300;
+  --color-dark-fern-700: #0e8704;
+  --color-dark-fern-800: #106a0a;
+  --color-dark-fern-900: #115a0d;
+  --color-dark-fern-950: #024601;
+
+  --color-old-gold-50: #fcfee8;
+  --color-old-gold-100: #faffc2;
+  --color-old-gold-200: #f7ff89;
+  --color-old-gold-300: #faff45;
+  --color-old-gold-400: #fcf913;
+  --color-old-gold-500: #ecdf06;
+  --color-old-gold-600: #caaf02;
+  --color-old-gold-700: #a38005;
+  --color-old-gold-800: #86640d;
+  --color-old-gold-900: #725111;
+  --color-old-gold-950: #432c05;
+}
+
+body {
+  background: var(--color-main-background);
+  color: var(--color-text-primary);
+  font-family: Arial, Helvetica, sans-serif;
+}
