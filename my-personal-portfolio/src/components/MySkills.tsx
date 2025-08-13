@@ -1,39 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import {
+  SiCss3,
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+} from "react-icons/si";
 
 export default function MySkills() {
   const skills = [
-    { name: "React", icon: "/icons/react.svg", color: "#61DAFB" },
-    { name: "Next.js", icon: "/icons/nextdotjs.svg", color: "#000000" },
-    { name: "TypeScript", icon: "/icons/typescript.svg" },
-    { name: "JavaScript", icon: "/icons/javascript.svg" },
-    { name: "HTML", icon: "/icons/html5.svg" },
-    { name: "CSS", icon: "/icons/css.svg" },
+    { name: "React", icon: <SiReact color="#61DAFB" size={48} /> },
+    { name: "Next.js", icon: <SiNextdotjs color="#000000" size={48} /> },
+    { name: "TypeScript", icon: <SiTypescript color="#3178C6" size={48} /> },
+    { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" size={48} /> },
+    { name: "HTML", icon: <SiHtml5 color="#E34F26" size={48} /> },
+    { name: "CSS", icon: <SiCss3 color="#1572B6" size={48} /> },
   ];
 
-  const repeatedSkills = [...skills, ...skills, ...skills, ...skills];
+  const repeatedSkills = [...skills, ...skills, ...skills];
 
   return (
-    <section className="mt-2">
-      <h2 className="p-4 pl-28">My Skills</h2>
-      <div className="mb-8 flex h-18 items-center justify-between overflow-hidden rounded-md bg-purple-600/40">
+    <section className="py-16">
+      <div className="mx-auto max-w-6xl px-8">
+        <h2 className="mb-6 text-2xl font-light text-gray-300">
+          Technologies I work with
+        </h2>
+      </div>
+
+      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900/30 via-purple-800/30 to-purple-900/30">
         <motion.div
-          className="flex gap-4"
-          animate={{ x: [0, -1000] }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          className="flex items-center py-8"
+          animate={{ x: [0, -1200] }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear",
+          }}
         >
           {repeatedSkills.map((skill, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 rounded-lg px-6 py-3 whitespace-nowrap"
-              style={{ backgroundColor: skill.color + "22" }} // light background tint
+              className="mx-8 flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-6 py-4 transition-all duration-300 hover:bg-white/10"
             >
-              <Image src={skill.icon} alt={skill.name} width={32} height={32} />
-              <p style={{ color: skill.color, fontWeight: 700 }}>
+              {skill.icon}
+              <span className="font-medium whitespace-nowrap text-gray-200">
                 {skill.name}
-              </p>
+              </span>
             </div>
           ))}
         </motion.div>
