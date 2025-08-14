@@ -18,6 +18,7 @@ export default function ContactCard({
     return (
         <a
             href={navigateTo}
+            target="_blank"
             className="group flex flex-col items-center gap-4 rounded-2xl border border-gray-800 bg-gray-900/30 p-6 transition-all hover:border-gray-700 hover:bg-gray-900/50"
         >
             <Icon className={`text-4xl ${iconColor}`} />

@@ -43,7 +43,7 @@ export default function ContactPage() {
                             iconColor="text-gray-400"
                             title="GitHub"
                             subTitle="View My Code"
-                            navigateTo="https://github.com/yourusername"
+                            navigateTo="https://github.com/viboverse"
                         />
                     </div>
 
