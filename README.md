@@ -38,7 +38,7 @@ A modern, responsive **Tic Tac Toe** game with a clean UI and an **unbeatable AI
 ### 🎬 [Movie Database App](https://fetch-movie-app.vercel.app)
 
 React app integrating **SWAPI** and **Firebase** to search, save, and manage movies.  
-**Stack:** React • Firebase • CSS
+**Stack:** React • Firebase • Tailwind CSS
 
 ---
 
