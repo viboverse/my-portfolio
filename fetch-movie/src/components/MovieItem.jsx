@@ -1,26 +1,37 @@
 import { useState } from "react";
 
 export default function MovieItem({ movie }) {
-  const [isExpanded, setIsExpanded] = useState(false);
+   const [isExpanded, setIsExpanded] = useState(false);
 
-  function toggleDescription() {
-    setIsExpanded((prevExpanded) => !prevExpanded);
-  }
+   function toggleDescription() {
+      setIsExpanded((prevExpanded) => !prevExpanded);
+   }
 
-  const needsExpansion = movie.description.length > 90;
-  const previewText = needsExpansion
-    ? movie.description.substring(0, 90) + "..."
-    : movie.description;
+   const needsExpansion = movie.description.length > 90;
+   const previewText = needsExpansion
+      ? movie.description.substring(0, 90) + "..."
+      : movie.description;
 
-  return (
-    <li id={movie.id}>
-      <h2>{movie.title}</h2>
-      <p>{isExpanded ? movie.description : previewText}</p>
-      {needsExpansion && (
-        <button onClick={toggleDescription}>
-          {isExpanded ? "Read Less" : "Read More"}
-        </button>
-      )}
-    </li>
-  );
+   return (
+      <li
+         id={movie.id}
+         onClick={toggleDescription}
+         className="cursor-pointer rounded-lg border border-gray-500 bg-neutral-900/50 p-5 leading-relaxed text-gray-200 transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+      >
+         <div className="space-y-3">
+            <h2 className="text-center text-2xl leading-tight font-semibold text-green-500">
+               {movie.title}
+            </h2>
+            <p className="text-sm leading-relaxed text-gray-300">
+               {isExpanded ? movie.description : previewText}
+            </p>
+
+            {needsExpansion && (
+               <button className="text-blue-500 hover:text-blue-800">
+                  {isExpanded ? "Read Less" : "Read More"}
+               </button>
+            )}
+         </div>
+      </li>
+   );
 }

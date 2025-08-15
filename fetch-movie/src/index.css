@@ -1,14 +1,38 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(120deg, #f3e7fa 0%, #e3eafc 100%);
-  color: #222;
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
-  min-height: 100vh;
+@import "tailwindcss";
+
+@theme {
+  --color-redwood-50: #fff8eb;
+  --color-redwood-100: #ffefd0;
+  --color-redwood-200: #ffdba0;
+  --color-redwood-300: #ffbf64;
+  --color-redwood-400: #ff9726;
+  --color-redwood-500: #ff7600;
+  --color-redwood-600: #ff5800;
+  --color-redwood-700: #d73f00;
+  --color-redwood-800: #aa3102;
+  --color-redwood-900: #882b06;
+  --color-redwood-950: #611800;
+
+  --color-camarone-50: #ecfff2;
+  --color-camarone-100: #d2ffe3;
+  --color-camarone-200: #a8ffc9;
+  --color-camarone-300: #65ffa1;
+  --color-camarone-400: #1bff6f;
+  --color-camarone-500: #00f94c;
+  --color-camarone-600: #00d03b;
+  --color-camarone-700: #00a232;
+  --color-camarone-800: #007e2c;
+  --color-camarone-900: #006125;
+  --color-camarone-950: #003b13;
 }
 
+body {
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+}
+
+/* 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+} */

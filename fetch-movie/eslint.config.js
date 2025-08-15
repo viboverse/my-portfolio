@@ -20,7 +20,7 @@ export default [
       },
     },
     plugins: {
-      react: pluginReact,
+      react: pluginReact(),
     },
     rules: {
       "no-unused-vars": "warn",
