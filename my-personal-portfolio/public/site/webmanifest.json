@@ -1,0 +1,21 @@
+{
+   "name": "Vahab Afsharian Portfolio",
+   "short_name": "Vibo Portfolio",
+   "start_url": "/",
+   "display": "standalone",
+   "background_color": "#000000",
+   "theme_color": "#7C3AED",
+   "description": "Personal portfolio of Vahab Afsharian - Frontend Developer",
+   "icons": [
+      {
+         "src": "/favicon-192x192.png",
+         "sizes": "192x192",
+         "type": "image/png"
+      },
+      {
+         "src": "/favicon-512x512.png",
+         "sizes": "512x512",
+         "type": "image/png"
+      }
+   ]
+}
