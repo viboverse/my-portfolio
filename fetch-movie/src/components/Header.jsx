@@ -7,7 +7,7 @@ export default function Header() {
             <img src={logo} alt="Logo" className="h-12 w-auto" />
          </a>
 
-         <h1 className="flex-1 text-center text-3xl text-green-500">
+         <h1 className="flex-1 text-center text-3xl font-bold text-indigo-500">
             React Movie API
          </h1>
       </header>

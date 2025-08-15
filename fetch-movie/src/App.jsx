@@ -100,7 +100,7 @@ function App() {
    }
 
    if (error) {
-      content = <p>{error}</p>;
+      content = <p className="text-center text-lg text-red-500">{error}</p>;
    }
 
    if (isLoading) {
@@ -114,7 +114,7 @@ function App() {
    return (
       <main className="min-h-screen bg-gradient-to-br from-neutral-500 to-neutral-700">
          <Header />
-         <div className="mx-auto grid max-w-7xl space-y-4 px-24 py-12 md:grid-cols-2">
+         <div className="mx-auto grid max-w-7xl space-y-4 space-x-8 px-24 py-12 md:grid-cols-2">
             {/* Left panel */}
             <div className="space-y-6">
                <div className="mx-auto max-w-md rounded-lg bg-neutral-200 p-6 shadow-md">

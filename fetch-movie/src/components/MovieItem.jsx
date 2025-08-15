@@ -16,7 +16,7 @@ export default function MovieItem({ movie }) {
       <li
          id={movie.id}
          onClick={toggleDescription}
-         className="cursor-pointer rounded-lg border border-gray-500 bg-neutral-900/50 p-5 leading-relaxed text-gray-200 transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+         className="hover:border-camarone-500 cursor-pointer rounded-lg border border-gray-500 bg-neutral-900/50 p-5 leading-relaxed text-gray-200 transition-all duration-300 hover:shadow-md"
       >
          <div className="space-y-3">
             <h2 className="text-center text-2xl leading-tight font-semibold text-green-500">
@@ -27,7 +27,7 @@ export default function MovieItem({ movie }) {
             </p>
 
             {needsExpansion && (
-               <button className="text-blue-500 hover:text-blue-800">
+               <button className="cursor-pointer text-blue-500 hover:text-blue-800">
                   {isExpanded ? "Read Less" : "Read More"}
                </button>
             )}
