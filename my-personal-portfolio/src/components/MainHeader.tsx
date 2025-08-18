@@ -22,7 +22,14 @@ export default function MainHeader() {
                />
             </Link>
 
-            <div className="hidden gap-12 pr-32 sm:flex">
+            <div className="hidden gap-12 sm:flex">
+               <Link
+                  href="/"
+                  className="group hover:text-old-gold-400 relative px-4 py-2 text-gray-200 transition-all duration-300"
+               >
+                  Home
+                  <span className="bg-old-gold-400 absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
+               </Link>
                <Link
                   href="/projects"
                   className="group hover:text-old-gold-400 relative px-4 py-2 text-gray-200 transition-all duration-300"
