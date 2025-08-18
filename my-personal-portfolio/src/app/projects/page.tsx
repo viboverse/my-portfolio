@@ -17,7 +17,7 @@ export default function ProjectsPage() {
          id: 1,
          title: "FetchFlix",
          description:
-            "A Netflix-inspired movie discovery app built with React and styled with Tailwind CSS. Features search functionality and detailed movie information with a responsive design.",
+            "React app integrating SWAPI and Firebase to search, save, and manage movies. Features a clean interface with responsive design.",
          image: "/projects/fetchflix.png",
          demoUrl: "https://fetch-movie-app.vercel.app/",
          githubUrl:
@@ -28,7 +28,7 @@ export default function ProjectsPage() {
          id: 2,
          title: "Tic-Tac-Toe",
          description:
-            "Modern tic-tac-toe game built with React and TypeScript. Features smooth animations, score tracking, and deployed on Vercel with Vite build tool.",
+            "A modern, responsive Tic Tac Toe game with a clean UI and an unbeatable AI opponent. Play against a friend or challenge the AI for a strategic battle you can't win.",
          image: "/projects/tic-tac-toe.png",
          demoUrl: "https://tic-tac-toe-bay-mu-94.vercel.app/",
          githubUrl:
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
          id: 3,
          title: "Weather App",
          description:
-            "Real-time weather application built with React and Vite. Features location-based forecasts, beautiful UI with Tailwind CSS, and deployed on Vercel.",
+            "Real-time weather forecasts with a responsive UI and animations. Features location-based weather data, beautiful animations, and intuitive user experience.",
          image: "/projects/weather-app.png",
          demoUrl: "https://react-weather-app-indol-five.vercel.app/",
          githubUrl:
@@ -48,9 +48,9 @@ export default function ProjectsPage() {
       },
       {
          id: 4,
-         title: "Project Manager App",
+         title: "Project Manager",
          description:
-            "Task management application built with React and vanilla CSS. Features project organization, task tracking, and clean HTML structure deployed on Vercel.",
+            "Task & project management app with authentication and state management. Features project organization, task tracking, and user authentication for seamless workflow management.",
          image: "/projects/project-manager-app.png",
          demoUrl: "https://project-manager-app-nine.vercel.app/",
          githubUrl:
@@ -59,21 +59,19 @@ export default function ProjectsPage() {
       },
       {
          id: 5,
-         title: "Personal Portfoli",
+         title: "Personal Portfolio",
          description:
-            "Task management application built with React and vanilla CSS. Features project organization, task tracking, and clean HTML structure deployed on Vercel.",
-         image: "/projects/project-manager-app.png",
-         demoUrl: "https://project-manager-app-nine.vercel.app/",
+            "Modern portfolio website built with Next.js and TypeScript. Showcases my projects, skills, and contact information with responsive design and smooth animations.",
+         image: "/projects/personal-portfolio.png",
+         demoUrl: "https://project-manager-app-nine.vercel.app/", // Update with your actual portfolio URL
          githubUrl:
-            "https://github.com/viboverse/my-portfolio/tree/main/project-manager-app",
+            "https://github.com/viboverse/my-portfolio/tree/main/my-personal-portfolio", // Update with actual portfolio repo
          techStack: [
             SiReact,
-            SiCss3,
-            SiHtml5,
-            SiVite,
-            SiVercel,
-            SiTypescript,
             SiNextdotjs,
+            SiTypescript,
+            SiTailwindcss,
+            SiVercel,
          ],
       },
    ];
