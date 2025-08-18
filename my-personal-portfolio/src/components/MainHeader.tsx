@@ -63,15 +63,34 @@ export default function MainHeader() {
 
          {isMenuOpen && (
             <div className="border-t border-purple-500/30 bg-gradient-to-b from-neutral-700 to-neutral-800 px-8 py-4">
-               <Link href="/projects" className="block py-3">
+               <Link
+                  href="/"
+                  className="block py-3"
+                  onClick={() => setIsMenuOpen(false)}
+               >
+                  Home
+               </Link>
+               <Link
+                  href="/projects"
+                  className="block py-3"
+                  onClick={() => setIsMenuOpen(false)}
+               >
                   Browse Projects
                </Link>
 
-               <Link href="/about" className="block py-3">
+               <Link
+                  href="/about"
+                  className="block py-3"
+                  onClick={() => setIsMenuOpen(false)}
+               >
                   About
                </Link>
 
-               <Link href="/contacts" className="block py-3">
+               <Link
+                  href="/contact"
+                  className="block py-3"
+                  onClick={() => setIsMenuOpen(false)}
+               >
                   Contacts
                </Link>
             </div>
