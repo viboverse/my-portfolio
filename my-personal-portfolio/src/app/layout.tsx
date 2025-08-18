@@ -35,7 +35,7 @@ export default function RootLayout({
       <html lang="en" className="scroll-smooth">
          <body className={roboto.className}>
             <MainHeader />
-            <main>{children}</main>
+            {children}
             <Footer />
          </body>
       </html>
